@@ -4,13 +4,15 @@
     <title>Px100app</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Antic" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+    <!--<%= render '/layouts/header' %>-->
+    </nav>
     <% if user_signed_in? %>
       <%= current_user.name %>さん / 
       <%= link_to "ログアウト", destroy_user_session_path, :method => 'delete' %>
@@ -19,5 +21,6 @@
       <%= link_to "ログイン", new_user_session_path %>
       <%= link_to "登録", new_user_registration_path %>
     <% end %>
+    <%= yield %>
   </body>
 </html>
