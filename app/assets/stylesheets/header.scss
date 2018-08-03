@@ -1,0 +1,128 @@
+
+.nav-container {
+    display: flex;
+    width:100%;
+    height: 35px;
+    background-color: rgb(229, 229, 229);
+    border-bottom: solid 1px rgb(199, 199, 199);
+    position: fixed;
+    top: 0px;
+}
+
+
+/////////// ナビゲーションバー左側 ///////////
+.nav-left {
+    width: 150px;
+    height: 35px;
+}
+.buttons {
+    text-align: center;
+    line-height: 2.0;
+    margin-left: 10px;
+    .btn {
+        display:inline;
+        margin: 0px 7px;
+    }
+}
+
+
+/////////// ナビゲーションバー中央 ///////////
+.nav-center {
+    height: 35px;
+    line-height: 1.3;
+    flex: 1;
+    font-family: 'Antic', sans-serif;
+    font-size: 1.5em;
+    color: rgb(112, 112, 112);
+    text-align: center;
+}
+
+
+/////////// ナビゲーションバー右側 ///////////
+.nav-right {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-right .nav {
+  width: 50px;
+  height: 35px;
+  margin-right: 20px;
+  position: relative;
+}
+
+
+// ボタン装飾
+.nav label {
+    width: 40px;
+    height: 35px;
+    float: right;
+    font-size: 1.5em;
+    color: rgb(112, 112, 112);
+    text-align: center;
+    line-height: 1.5;
+    font-weight: bold;
+    cursor :pointer;
+    transition: .5s;
+}
+
+// アイコンを表示
+.nav label:before {
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    font-weight: bold;
+    color: rgb(112, 112, 112);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+// アイコンを切り替え
+.nav input:checked ~ label:before {
+     content: '\f107';
+     font-weight: bold;
+     color: rgb(133, 154, 198);
+     transform: rotateX(180deg);
+}
+
+// チェックは見えなくする
+.nav input {
+    display: none;
+}
+
+// 中身を非表示にしておく
+.nav .hidden_show .child {
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    transform: translateY(-20px);
+}
+
+// クリックで中身表示
+.nav input:checked ~ .hidden_show .child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.nav .hidden_show {
+    width: 40px;
+    top: 35px;
+    left: 10px;
+    position: absolute;
+}
+
+// プルダウンボタンの装飾
+.nav .hidden_show .child {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  text-align:center;
+}
+.hidden_show .child i {
+    width: 25px;
+    height: 25px;
+    margin-top: 11px;
+}
