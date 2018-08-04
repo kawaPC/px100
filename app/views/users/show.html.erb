@@ -1,5 +1,7 @@
 <% provide(:title, @user.name) %>
-<h2 class="users-heading"><%= @user.name %></h2>
+<div class="users-heading">
+    <h2 class="username"><%= @user.name %></h2>
+</div>
 <div class="container">
     <%= render partial: "album", collection: @albums %>
 </div>

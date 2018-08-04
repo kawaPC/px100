@@ -1,0 +1,28 @@
+@media (max-width: 767px) {
+    .nav-left .buttons {
+        text-align: center;
+        line-height: 2.5;
+        margin-right: 65px;
+    }
+    
+    .nav-left .buttons .btn {
+        display:inline;
+        margin: 0px 3px;
+        i {
+            width: 10px;
+        }
+    }
+    
+    .nav-container .nav-right .nav {
+      width: 50px;
+      height: 35px;
+      margin-right: 3px;
+      position: relative;
+    }
+}
+
+// リンクの装飾
+a {
+    text-decoration: none;
+    color: rgb(112, 112, 112);
+}
