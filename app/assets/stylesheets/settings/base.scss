@@ -19,6 +19,23 @@
       margin-right: 3px;
       position: relative;
     }
+    
+    body .users-heading {
+        width: 100%;
+        height: 120px;
+        margin-top: 40px;
+        display: block;
+    }
+    
+    .users-heading .username {
+        font-family: 'Antic', sans-serif;
+        line-height: 70px;
+        font-weight: 300;
+        font-size: 30px;
+        letter-spacing: 0.1em;
+        color: rgb(112, 112, 112);
+        text-align: center;
+    }
 }
 
 // リンクの装飾
