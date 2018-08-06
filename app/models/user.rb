@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  # ユーザーが削除されたときにアルバムも削除されるように
+  # ユーザーが削除されたときにアルバム・写真も削除されるように
   has_many :albums, dependent: :destroy
+  has_many :posts, dependent: :destroy
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
