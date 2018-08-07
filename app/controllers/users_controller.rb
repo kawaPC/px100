@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     @albums = Album.where(user_id: @user.id)
   end
   
+  def edit
+  end
+  
+  def update
+  end
+  
   private
   def load_user
     @user = User.find_by_friendly_id_or_id(params[:id])

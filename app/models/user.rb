@@ -3,11 +3,12 @@ class User < ApplicationRecord
   has_many :albums, dependent: :destroy
   has_many :posts, dependent: :destroy
   validates :name, presence: true, uniqueness: true
-  validates :friendly_id,
+  validates :friendly_id, 
   uniqueness: { case_sensitive: false },
   format: { with: /\A[A-Za-z][\w-]*\z/ },
   length: { minimum: 3, maximum: 25 },
-  allow_nil: true
+  allow_nil: true,
+  ban_reserved: true
   
   
   devise :database_authenticatable, :registerable,
