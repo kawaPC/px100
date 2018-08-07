@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root "welcome#index"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   
-  resources :users, only: [:show] do
-    resources :albums, only: [:create, :destroy] do
-      resources :posts
+  resources :users, param: :name, path: '/', only: [:show] do
+    resources :albums, param: :name, path: '/', only: [:create, :destroy] do
+      resources :posts, param: :id, path: '/'
     end
   end
   
