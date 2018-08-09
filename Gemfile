@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '5.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
@@ -26,11 +26,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
+gem 'devise', '4.4.3'
+gem 'omniauth', '1.8.1'
+gem 'omniauth-facebook', '5.0.0'
+gem 'omniauth-twitter', '1.4.0'
+gem 'omniauth-google-oauth2', '0.5.3'
 gem 'dotenv-rails'
 
 gem 'carrierwave'

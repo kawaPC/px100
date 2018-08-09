@@ -1,0 +1,12 @@
+<%= link_to user_album_path(current_user, album) do %>
+<div class="text-box">
+    <div class="text">
+        <%= album.album_name %>
+    </div>
+</div>
+<div class="cover-box">
+        <div class="cover">
+            <img src=<%= "/sample/album/023.jpg" %>>
+        </div>
+</div>
+<% end %>

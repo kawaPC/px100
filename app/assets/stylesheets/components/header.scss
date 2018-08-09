@@ -57,8 +57,18 @@
   position: relative;
 }
 
+.nav-right .btn {
+    width: 30px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+}
 
-// ボタン装飾
+.nav-right .btn i {
+    margin-top: 11px;
+}
+
+// ドロップボタン装飾
 .nav label {
     width: 40px;
     height: 40px;

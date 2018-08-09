@@ -1,0 +1,7 @@
+<% provide(:title, current_user.name) %>
+<div class="users-heading">
+    <h2 class="username"><%= link_to "#{current_user.name}", user_path(current_user) %></h2>
+</div>
+<div class="container">
+    <%= render partial: "album", collection: @albums %>
+</div>

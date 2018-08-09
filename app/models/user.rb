@@ -23,16 +23,22 @@ class User < ApplicationRecord
                           uid:      auth.uid,
                           email:    auth.info.email,
                           token:    auth.credentials.token,
+                          friendly_id: auth.set_random_name,
                           password: Devise.friendly_token[0,20] )
     end
     return user
   end
   
   def to_param
-    friendly_id ? friendly_id : id.to_s
+    friendly_id
   end
   
-  def self.find_by_friendly_id_or_id(arg)
-    find_by_friendly_id(arg) || find(arg)
+  def set_random_name
+    loop do
+      friendly_id = SecureRandom.hex(10)
+      break unless User.where(friendly_id: friendly_id).exists?
+    end
+    return friendly_id
   end
+  
 end

@@ -38,6 +38,7 @@
     
     <div class="nav-center">100px</div>
       <div class="nav-right">
+        <%= yield :plus %>
         <div class="nav">
           <input type="checkbox" id="label1" />
           <label for="label1"></label>
@@ -55,20 +56,6 @@
         </div>
       </div>
     </div>
-
-
-
-      <!--<% if user_signed_in? %>-->
-      <!--  <%= link_to("px100", "/users/#{current_user.id}") %>-->
-      <!--  <%= current_user.name %>さん / -->
-      <!--  <%= link_to "ログアウト", destroy_user_session_path, :method => 'delete' %>-->
-      <!--  <%= link_to "ユーザ情報の編集", edit_user_registration_path %>-->
-      <!--  <% else %>-->
-      <!--  <%= link_to "px100", root_path %>-->
-      <!--  <%= link_to "ログイン", new_user_session_path %>-->
-      <!--  <%= link_to "登録", new_user_registration_path %>-->
-      <!--<% end %>-->
-      
 
     <%= yield %>
   </body>

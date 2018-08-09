@@ -1,0 +1,15 @@
+<div class="form-container">
+    <div class="form">
+      <%= @album.album_name %>
+      <%= @album.id %>
+        <%= form_for(@post, url: user_posts_path) do |f| %>
+          <div class="picture">
+            <!--<%= f.text_field :picture, name:"post[picture][]" %>-->
+            <!--<%= f.text_field :picture, name:"post[picture][]" %>-->
+            <!--<%= f.text_field :picture, name:"post[picture][]" %>-->
+            <%= f.file_field :picture, name:"post[picture][]", multiple: true %>
+          </div>
+          <%= f.submit "Post", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
