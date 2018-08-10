@@ -32,8 +32,9 @@ gem 'omniauth-facebook', '5.0.0'
 gem 'omniauth-twitter', '1.4.0'
 gem 'omniauth-google-oauth2', '0.5.3'
 gem 'dotenv-rails'
-
 gem 'carrierwave'
+gem 'jquery-rails'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
