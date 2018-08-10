@@ -1,3 +1,21 @@
-// Place all the styles related to the Albums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#wrapper {
+  width: 100%;
+  margin-top: 100px;
+
+}
+#container {
+  max-width: 900px;
+  margin: 0 auto;   /*中央寄せ*/
+  display: flex;
+  flex-wrap:wrap;
+  
+}
+.box {
+  margin: 15px;
+  height: 60px;
+  width: 60px;
+  padding: 8px;
+}
+.box img {
+    width: 60px;
+}

@@ -8,6 +8,7 @@ class AlbumsController < ApplicationController
     
     def show
         session[:album] = @album.id
+        @posts = Post.where(album_id: @album.id)
     end
     
     def new
