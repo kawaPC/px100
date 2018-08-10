@@ -1,9 +1,9 @@
-#wrapper {
+.wrapper {
   width: 100%;
   margin-top: 100px;
 
 }
-#container {
+.wrapper .container {
   max-width: 900px;
   margin: 0 auto;   /*中央寄せ*/
   display: flex;
