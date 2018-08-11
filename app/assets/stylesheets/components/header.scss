@@ -51,21 +51,19 @@
 }
 
 .nav-right .nav {
-  width: 50px;
-  height: 40px;
-  margin-right: 20px;
   position: relative;
 }
 
 .nav-right .btn {
-    width: 30px;
+    width: 40px;
     height: 40px;
+    margin-right: 10px;
     position: relative;
     text-align: center;
 }
 
 .nav-right .btn i {
-    line-height: 2.5;
+    margin-top: 12px;
 }
 
 // ドロップボタン装飾
@@ -125,19 +123,19 @@
 .nav .hidden_show {
     width: 40px;
     top: 35px;
-    left: 10px;
+    left: 0px;
     position: absolute;
 }
 
 // プルダウンボタンの装飾
 .nav .hidden_show .child {
-  width: 40px;
-  height: 40px;
-  margin-top: 8px;
-  text-align:center;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    text-align:center;
 }
-.hidden_show .child i {
-    width: 25px;
-    height: 25px;
-    margin-top: 11px;
+.hidden_show .child-box {
+    width: 200px;
+    height: 60px;
 }
+

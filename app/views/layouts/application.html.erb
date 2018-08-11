@@ -10,53 +10,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="nav-container">
-    <div class="nav-left">
-      <ul class="buttons">
-        <li class="btn">
-          <%= link_to("#") do %>
-            <i class="fas fa-grip-horizontal"></i>
-          <% end %>
-        </li>
-        <li class="btn">
-          <%= link_to("#") do %>
-            <i class="fas fa-chess-board"></i>
-          <% end %>
-        </li>
-        <li class="btn">
-          <%= link_to("#") do %>
-            <i class="fas fa-long-arrow-alt-right"></i>
-          <% end %>
-        </li>
-        <li class="btn">
-          <%= link_to("#") do %>
-            <i class="fas fa-long-arrow-alt-down"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="nav-center"><%= link_to("100px", user_albums_path) %></div>
-      <div class="nav-right">
-        <%= yield :plus %>
-        <div class="nav">
-          <input type="checkbox" id="label1" />
-          <label for="label1"></label>
-          <div class="hidden_show">
-      				<div class="child child-firts">
-      				  <a href="#"><i class="fas fa-user"></i></a>
-      				</div>
-      				<div class="child child-secound">
-      				  <a href="#"><i class="far fa-comment"></i></a>
-      				</div>
-      				<div class="child child-third">
-      				  <a href="#"><i class="fas fa-sign-out-alt"></i></a>
-      				</div>
-          </div>
-        </div>
+  <body>
+    <%= render 'layouts/header' %>
+    <% if flash[:notice]%>
+      <div class="flash">
+        <%= flash[:notice] %>
       </div>
-    </div>
-
+    <% end %>
     <%= yield %>
   </body>
 </html>
+
+<!--フラッシュメッセージのフェードアウト-->
+<script>
+    $(function() {
+        setTimeout(function() {
+            $('.flash').fadeOut("slow");
+        }, 3000);
+    });
+</script>

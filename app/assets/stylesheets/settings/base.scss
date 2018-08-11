@@ -1,4 +1,34 @@
+.main {
+    position: absolute;
+    top: 64px;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    text-align: center;
+}
+
+
+// ドロップダウンが画像に重ならないように横並びに
+@media (max-width: 1020px) {
+    .nav-container .nav-right .hidden_show {
+        width: 200px;
+        height: 60px;
+        top: 28px;
+        left: -80px;
+        position: absolute;
+    }
+    .nav-container .nav-right .hidden_show .child {
+        width: 40px;
+        height: 40px;
+        margin-top: 8px;
+        text-align: center;
+        float: left;
+    }
+}
+
+// モバイル用
 @media (max-width: 767px) {
+    // アイコン詰める
     .nav-left .buttons {
         text-align: center;
         line-height: 2.5;
@@ -14,10 +44,31 @@
     }
     
     .nav-container .nav-right .nav {
-      width: 50px;
-      height: 35px;
-      margin-right: 3px;
       position: relative;
+    }
+    
+    .nav-container .nav-right .btn {
+        width: 30px;
+        height: 40px;
+        margin-right: 5px;
+        position: relative;
+        text-align: center;
+    }
+    
+    .nav-container .nav-right .hidden_show {
+        width: 200px;
+        height: 60px;
+        top: 28px;
+        left: -70px;
+        position: absolute;
+    }
+    
+    .nav-container .nav-right .hidden_show .child {
+        width: 32px;
+        height: 40px;
+        margin-top: 8px;
+        text-align: center;
+        float: left;
     }
     
     body .users-heading {
@@ -38,6 +89,8 @@
     }
 }
 
+
+
 // リンクの装飾
 a {
     text-decoration: none;
@@ -47,4 +100,18 @@ a {
 // スクロールバーを常に表示
 body {
     overflow-y: scroll;
+}
+
+// フラッシュメッセージ
+.flash {
+  padding: 5px 0;
+  color: rgba(112, 112, 112, 0.6);
+  background: rgba(229, 229, 229, 0.6);
+  text-align: center;
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 14px;
 }

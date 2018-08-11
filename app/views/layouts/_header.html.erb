@@ -1,10 +1,55 @@
-<ul class="menu">
-    <li class="menu__single">
-        <a href="#" class="init-bottom">Menu single</a>
-        <ul class="menu__second-level">
-            <li><a href="#">Child Menu</a></li>
-            <li><a href="#">Child Menu</a></li>
-            <li><a href="#">Child Menu</a></li>
-        </ul>
-    </li>
-</ul>
+<div class="nav-container">
+  <div class="nav-left">
+    <ul class="buttons">
+      <li class="btn">
+        <%= link_to("#") do %>
+          <i class="fas fa-grip-horizontal"></i>
+        <% end %>
+      </li>
+      <li class="btn">
+        <%= link_to("#") do %>
+          <i class="fas fa-chess-board"></i>
+        <% end %>
+      </li>
+      <li class="btn">
+        <%= link_to("#") do %>
+          <i class="fas fa-long-arrow-alt-right"></i>
+        <% end %>
+      </li>
+      <li class="btn">
+        <%= link_to("#") do %>
+          <i class="fas fa-long-arrow-alt-down"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-center"><%= link_to("100px", root_path) %></div>
+  <div class="nav-right">
+    <%= yield :return %>
+    <%= yield :plus %>
+    <div class="nav">
+      <div class="btn">
+        <input type="checkbox" id="label1" />
+        <label for="label1"></label>
+        <div class="hidden_show">
+          <div class="child child-firts">
+            <%= link_to("#") do %>
+              <i class="fas fa-user"></i></a>
+            <% end %>
+          </div>
+          <div class="child child-secound">
+            <%= link_to("#") do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+          </div>
+          <div class="child child-third">
+            <%= link_to destroy_user_session_path do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

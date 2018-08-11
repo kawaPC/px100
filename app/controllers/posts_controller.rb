@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
     # deviseヘルパー ログインユーザーのみ実行可能
-    before_action :authenticate_user!, only: [:new, :create, :destroy] 
+    # before_action :authenticate_user!, only: [:new, :create, :destroy]
+    before_action :correct_user, only: [:new, :create, :destroy]
     
     def show
     end
@@ -24,7 +25,17 @@ class PostsController < ApplicationController
     def destroy
     end
     
+    private
+    
     def post_params
-      params.require(:post).permit(:album_id, picture:[])
+      params.require(:post).permit(picture:[])
+    end
+    
+    def correct_user
+      @user = User.find_by(friendly_id: params[:user_id])
+      unless @user == current_user
+        flash.now[:notice] = "権限がありません"
+        redirect_to(root_path)
+      end
     end
 end

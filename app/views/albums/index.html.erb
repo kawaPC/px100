@@ -1,7 +1,12 @@
-<% provide(:title, current_user.name) %>
+<% provide(:title, @user.name) %>
 <div class="users-heading">
-    <h2 class="username"><%= link_to "#{current_user.name}", user_path(current_user) %></h2>
+    <h2 class="username"><%= link_to "#{@user.name}", user_albums_path %></h2>
 </div>
 <div class="container">
-    <%= render partial: "album", collection: @albums %>
+    <%= render partial: 'album', collection: @albums , locals: {user: @user} %>
 </div>
+<% content_for :plus do %>
+    <%= link_to new_user_album_path do %>
+      <div class="btn"><i class="fas fa-plus"></i></div>
+    <% end %>
+<% end %>
