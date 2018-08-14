@@ -23,6 +23,11 @@ class PostsController < ApplicationController
     end
     
     def destroy
+      @user = User.find_by(friendly_id: params[:user_id])
+      @album = Album.find_by(id: session[:album])
+      Post.find(params[:id]).destroy
+      flash[:notice] = "削除しました"
+      redirect_to "/#{@user.friendly_id}/albums/#{@album.album_name}/edit"
     end
     
     private
@@ -34,7 +39,7 @@ class PostsController < ApplicationController
     def correct_user
       @user = User.find_by(friendly_id: params[:user_id])
       unless @user == current_user
-        flash.now[:notice] = "権限がありません"
+        flash[:notice] = "権限がありません"
         redirect_to(root_path)
       end
     end

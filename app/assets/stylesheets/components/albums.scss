@@ -19,10 +19,13 @@
     width: 60px;
 }
 
-.check {
-    opacity: 0;
+.relative-picture {
+    position: relative;
 }
-
-.check:checked ~ .box {
-    display: none;
+.absolute-text {
+    position: absolute;
+    font-size: 1.5em;
+    color: rgba(112, 112, 112, 0.8);
+    left: -8px;
+    bottom: 47px;
 }

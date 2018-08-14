@@ -33,6 +33,7 @@ class AlbumsController < ApplicationController
     
     def edit
         @posts = Post.where(album_id: @album.id)
+        @user = User.find_by(id: @album.user_id)
     end
     
     def update
