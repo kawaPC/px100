@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
   
   resources :users, path: '/', only: [:show] do
-    resources :albums, only: [:index,  :new, :create]
+    resources :albums, only: [:index,  :edit, :new, :create]
     resources :posts, only: [:show, :new, :create, :destroy]
   end
   resources :users, path: '/', only: [:show] do

@@ -3,7 +3,7 @@
       <%= current_user.name %>
         <%= form_for(@album, url: { controller: :albums, action: :create } ) do |f| %>
           <div class="album_name">
-            <%= f.text_field :album_name %>
+            <%= f.text_field :album_name, required: true %>
           </div>
           <div class="picture">
             <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png' %>

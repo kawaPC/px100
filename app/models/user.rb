@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+  before_create :generate_friendly_id
   # ユーザーが削除されたときにアルバム・写真も削除されるように
   has_many :albums, dependent: :destroy
   has_many :posts, dependent: :destroy
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :friendly_id, 
   uniqueness: { case_sensitive: false },
   format: { with: /\A[A-Za-z][\w-]*\z/ },
@@ -34,11 +35,15 @@ class User < ApplicationRecord
   end
   
   def set_random_name
-    loop do
-      friendly_id = SecureRandom.hex(10)
-      break unless User.where(friendly_id: friendly_id).exists?
+    friendly_id = SecureRandom.hex(10)
+    while User.where(friendly_id: friendly_id).exists?
+        friendly_id = SecureRandom.hex(10)
     end
     return friendly_id
+  end
+  
+  def generate_friendly_id
+    self.friendly_id = self.set_random_name
   end
   
 end

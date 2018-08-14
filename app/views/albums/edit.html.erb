@@ -1,6 +1,8 @@
 <div class="wrapper">
     <div class="container" class="transitions-enable clearfix">
-        <%= render partial: "post", collection: @posts %>
+        <%= form_for(@post, url: { controller: :albums, action: :create } ) do |f| %>
+        <%= render partial: "form", collection: @posts, as: "post" %>
+        <% end %>
     </div>
 </div>
 <% content_for :return do %>
@@ -12,9 +14,4 @@
     <%= link_to new_user_post_path do %>
       <div class="btn"><i class="fas fa-plus"></i></div>
     <% end %>
-<% end %>
-<% content_for :edit do %>
-  <%= link_to edit_user_album_path do %>
-    <i class="far fa-trash-alt"></i>
-  <% end %>
 <% end %>

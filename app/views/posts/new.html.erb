@@ -4,7 +4,7 @@
       <%= @album.id %>
         <%= form_for(@post, url: user_posts_path) do |f| %>
           <div class="picture">
-            <%= f.file_field :picture, name:"post[picture][]", multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
+            <%= f.file_field :picture, name:"post[picture][]", multiple: true, accept: 'image/jpeg,image/gif,image/png', required: true %>
           </div>
           <%= f.submit "Post", class: "btn btn-primary" %>
         <% end %>

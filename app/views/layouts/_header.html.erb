@@ -39,9 +39,7 @@
             <% end %>
           </div>
           <div class="child child-secound">
-            <%= link_to("#") do %>
-              <i class="far fa-comment"></i>
-            <% end %>
+            <%= yield :edit %>
           </div>
           <div class="child child-third">
             <%= link_to destroy_user_session_path do %>

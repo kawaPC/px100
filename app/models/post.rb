@@ -6,8 +6,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validate  :picture_size
   
-  
-  
+  private
   # アップロードされた画像のサイズをバリデーションする
   def picture_size
     if picture.size > 3.megabytes

@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-    before_action :load_album, only: [:show]
+    before_action :load_album, only: [:show, :edit]
     before_action :correct_user, only: [:new]
     
     def index
@@ -18,7 +18,24 @@ class AlbumsController < ApplicationController
     end
     
     def create
-        
+        @album = current_user.albums.build(album_params)
+        unless  @album.cover_picture
+            @album.cover_picture = File.open("/assets/images/default_picture.jpg")
+        end
+        if @album.save
+            flash[:notice] = "アルバムを作成しました"
+            redirect_to user_albums_path
+        else
+            flash[:notice] = "保存できませんでした"
+            render 'albums/new'
+        end
+    end
+    
+    def edit
+        @posts = Post.where(album_id: @album.id)
+    end
+    
+    def update
     end
     
     private
@@ -34,8 +51,8 @@ class AlbumsController < ApplicationController
     def correct_user
         @user = User.find_by(friendly_id: params[:user_id])
         unless @user == current_user
-            flash.now[:notice] = "権限がありません"
-            redirect_to(root_path)
+            flash[:notice] = "権限がありません"
+            redirect_back(fallback_location: root_path)
         end
     end
 end

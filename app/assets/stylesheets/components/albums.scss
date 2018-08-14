@@ -18,3 +18,11 @@
 .box img {
     width: 60px;
 }
+
+.check {
+    opacity: 0;
+}
+
+.check:checked ~ .box {
+    display: none;
+}
