@@ -9,7 +9,13 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :new, :create, :destroy]
   end
   resources :users, path: '/', only: [:show] do
-    resources :albums, path: '/', only: [:show, :destroy, :update]
+    resources :albums, path: '/', only: [:show, :destroy, :update] do
+      member do
+        get :horizontal
+        get :vartical
+        get :chess
+      end
+    end
   end
   
   root "home#top"

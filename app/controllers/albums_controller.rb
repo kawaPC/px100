@@ -13,6 +13,18 @@ class AlbumsController < ApplicationController
         @posts = Post.where(album_id: @album.id)
     end
     
+    def horizontal
+        @posts = Post.where(album_id: session[:album])
+    end
+    
+    def vartical
+        @posts = Post.where(album_id: session[:album])
+    end
+    
+    def chess
+        @posts = Post.where(album_id: session[:album])
+    end
+    
     def new
         @album = Album.new
     end

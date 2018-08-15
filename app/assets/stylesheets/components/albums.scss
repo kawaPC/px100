@@ -1,24 +1,22 @@
 .wrapper {
-  width: 100%;
-  margin-top: 100px;
-
+  max-width: 1040px;
+  margin: 0 auto;
 }
 .wrapper .container {
-  max-width: 900px;
-  margin: 0 auto;   /*中央寄せ*/
+  margin: 100px 100px 0 100px;
+}
+.wrapper .container ul {
   display: flex;
   flex-wrap:wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  animation: bottom-to-top-grid 1.3s ease-out 0s 1 normal;
 }
-.box {
-  margin: 15px;
-  height: 60px;
-  width: 60px;
+.wrapper .container ul li {
+  margin: 30px;
 }
 .box img {
     width: 60px;
 }
-
 .relative-picture {
     position: relative;
 }
@@ -28,4 +26,13 @@
     color: rgba(112, 112, 112, 0.8);
     left: -8px;
     bottom: 47px;
+}
+
+@keyframes bottom-to-top-grid {
+    0% {
+        margin-top: 150%;
+    }
+    100% {
+        margin-top: 110px;
+    }
 }

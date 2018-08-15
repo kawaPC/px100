@@ -1,9 +1,11 @@
-<div class="wrapper">
-    <div class="container">
-      <ul>
-        <%= render partial: "post", collection: @posts %>
+<div class="full-box">
+   <div class="horizontal_scroll_wrap">
+      <ul class="scroll_lst">
+         <div class="list-wrap">
+         <%= render partial: "horizontal_post", collection: @posts, as: "post" %>
+         </div>
       </ul>
-    </div>
+   </div>
 </div>
 <% content_for :return do %>
     <%= link_to ("#") do %>

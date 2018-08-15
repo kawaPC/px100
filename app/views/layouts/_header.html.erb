@@ -1,29 +1,9 @@
 <div class="nav-container">
   <div class="nav-left">
     <ul class="buttons">
-      <li class="btn">
-        <%= link_to("#") do %>
-          <i class="fas fa-grip-horizontal"></i>
-        <% end %>
-      </li>
-      <li class="btn">
-        <%= link_to("#") do %>
-          <i class="fas fa-chess-board"></i>
-        <% end %>
-      </li>
-      <li class="btn">
-        <%= link_to("#") do %>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        <% end %>
-      </li>
-      <li class="btn">
-        <%= link_to("#") do %>
-          <i class="fas fa-long-arrow-alt-down"></i>
-        <% end %>
-      </li>
+      <%= yield :left_button %>
     </ul>
   </div>
-
   <div class="nav-center"><%= link_to("100px", root_path) %></div>
   <div class="nav-right">
     <%= yield :return %>

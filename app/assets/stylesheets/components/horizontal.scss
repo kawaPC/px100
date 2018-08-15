@@ -1,0 +1,45 @@
+.horizontal_scroll_wrap{
+    margin-top:40px;
+    height: 90%;
+    overflow-y: hidden;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+.scroll_lst {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 60px;
+    position: absolute;
+    top: 40%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll_item {
+    margin-right: 200px;
+    display: inline-block;
+    width: 60px;
+}
+
+
+.scroll_item_inr {
+    display: block;
+}
+
+.scroll_lst {
+    animation: right-to-left 1.3s ease-out 0s 1 normal;
+    margin-left: 200px;
+}
+
+@keyframes right-to-left {
+    0% {
+        margin-left: 180%;
+    }
+    100% {
+        margin-left: 200px;
+    }
+}
