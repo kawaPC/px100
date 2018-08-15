@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   # アップロードされた画像のサイズをバリデーションする
   def picture_size
     if picture.size > 3.megabytes
-      errors.add(:picture, "should be less than 5MB")
+      errors.add(:picture, "3MB以上の画像は投稿できません")
     end
   end
 end
