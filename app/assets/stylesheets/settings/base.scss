@@ -28,14 +28,19 @@
 
 
 // 画面サイズごとにwrapper widthを変更
+<<<<<<< HEAD
 @media (max-width: 1096px) {
+=======
+@media (max-width: 1270px) {
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     body .chess-wrapper {
       max-width: 1020px;
     }
 }
 
-@media (max-width: 1054px) {
+@media (max-width: 1076px) {
     body .wrapper {
+<<<<<<< HEAD
       max-width: 920px;
     }
 }
@@ -49,12 +54,28 @@
 @media (max-width: 976px) {
     body .chess-wrapper {
       max-width: 900px;
+=======
+      max-width: 900px;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 1030px) {
+    body .chess-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
 }
 
 @media (max-width: 934px) {
     body .wrapper {
+<<<<<<< HEAD
       max-width: 800px;
+=======
+      max-width: 740px;
+      margin: 0 auto;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
 }
 
@@ -70,7 +91,11 @@
     }
     
     .horizontal_scroll_wrap .scroll_item {
+<<<<<<< HEAD
       margin-right: 150px;
+=======
+      margin-right: 200px;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
     .horizontal_scroll_wrap .scroll_lst {
       animation: right-to-left-ta 1.3s ease-out 0s 1 normal;
@@ -89,6 +114,7 @@
 
 @media (max-width: 814px) {
     body .wrapper {
+<<<<<<< HEAD
       max-width: 680px;
     }
 }
@@ -105,13 +131,31 @@
     }
     body .chess-wrapper .chess-container {
       margin: 110px 100px 0 100px;
+=======
+      max-width: 580px;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 800px) {
+    body .chess-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
 }
 
 
+<<<<<<< HEAD
 @media (max-width: 696px) {
     body .wrapper {
       max-width: 360px;
+=======
+@media (max-width: 596px) {
+    body .wrapper {
+      max-width: 360px;
+      margin: 0 auto;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
     body .wrapper .container {
       margin: 80px 0 0 0;
@@ -119,6 +163,14 @@
     body .wrapper .container ul {
       animation: bottom-to-top-grid-m 1.3s ease-out 0s 1 normal;
     }
+<<<<<<< HEAD
+=======
+    body .wrapper .container ul li {
+      margin: 10px 10px 100px 10px;
+      height: 100px;
+      width: 100px;
+    }
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     @keyframes bottom-to-top-grid-m {
       from {
           margin-top: 1500px;
@@ -127,6 +179,7 @@
           margin-top: 80px;
       }
     }
+<<<<<<< HEAD
     
     body .chess-wrapper .chess-container {
       margin: 90px 100px 0 100px;
@@ -143,35 +196,82 @@
       }
     }
     
+=======
+    body .vartical-container li {
+      margin-top: 200px;
+      animation: bottom-to-top-m 1s ease-out 0s 1 normal;
+    }
+    @keyframes bottom-to-top-m {
+        0% {
+            margin-top: 300%;
+        }
+        100% {
+            margin-top: 200px;
+        }
+    }
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     .horizontal_scroll_wrap .scroll_lst {
       animation: right-to-left-m 1.3s ease-out 0s 1 normal;
-      margin-left: 60px;
+      margin-left: 100px;
     }
     @keyframes right-to-left-m {
       from {
         margin-left: 2500px;
       }
+<<<<<<< HEAD
       to {
         margin-left: 60px;
+=======
+      100% {
+        margin-left: 100px;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
       }
     }
 }
 
 @media (max-width: 576px) {
     body .chess-wrapper {
+<<<<<<< HEAD
       max-width: 460px;
+=======
+      max-width: 500px;
+      margin: 0 auto;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     }
     body .chess-wrapper .chess-container {
       margin: 90px 80px 0 80px;
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 476px) {
+=======
+@media (max-width: 516px) {
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
     body .chess-wrapper {
       max-width: 300px;
     }
     body .chess-wrapper .chess-container {
       margin: 90px 30px 0 30px;
+    }
+}
+
+@media (max-width: 426px) {
+    .horizontal_scroll_wrap .scroll_item {
+      margin-right: 150px;
+    }
+    .horizontal_scroll_wrap .scroll_lst {
+      animation: right-to-left-m 1.3s ease-out 0s 1 normal;
+      margin-left: 50px;
+    }
+
+    @keyframes right-to-left-m {
+      0% {
+        margin-left: 300%;
+      }
+      100% {
+        margin-left: 50px;
+      }
     }
 }
 

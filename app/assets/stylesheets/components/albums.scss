@@ -1,9 +1,9 @@
 .wrapper {
-  max-width: 1040px;
+  max-width: 1060px;
   margin: 0 auto;
 }
 .wrapper .container {
-  margin: 100px 100px 0 100px;
+  margin: 100px 50px 0 50px;
 }
 .wrapper .container ul {
   display: flex;
@@ -15,7 +15,8 @@
   margin: 30px;
 }
 .box img {
-    width: 60px;
+    width: 100px;
+    height: 100px;
 }
 .relative-picture {
     position: relative;
@@ -23,9 +24,15 @@
 .absolute-text {
     position: absolute;
     font-size: 1.5em;
+<<<<<<< HEAD
     color: rgb(112, 112, 112);
     left: -10px;
     bottom: 49px;
+=======
+    color: rgba(112, 112, 112, 0.8);
+    left: -10px;
+    bottom: 90px;
+>>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
 }
 
 @keyframes bottom-to-top-grid {

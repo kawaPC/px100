@@ -5,9 +5,13 @@
 .vartical-wrapper .vartical-container {
   text-align: center;
 }
-.vartical-container li {
+.vartical-container ul {
   margin-top: 200px;
   animation: bottom-to-top 1.3s ease-out 0s 1 normal;
+}
+
+.vartical-container ul li {
+  margin-bottom: 300px;
 }
 
 @keyframes bottom-to-top {
