@@ -27,6 +27,8 @@ class AlbumsController < ApplicationController
     
     def new
         @album = Album.new
+        @user = User.find_by(friendly_id: params[:user_id])
+        @albums = Album.where(user_id: @user.id)
     end
     
     def create

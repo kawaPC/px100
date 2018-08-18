@@ -1,7 +1,88 @@
-.form-container {
-  width: 100%;
-  margin-top: 40px;
-  text-align: center;
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
 }
-.form {
+.wrapper .container {
+  margin: 100px 50px 0 50px;
+}
+.wrapper .container ul {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  animation: bottom-to-top-grid 1.3s ease-out 0s 1 normal;
+}
+.wrapper .container ul li {
+  margin: 30px;
+}
+.box img {
+    width: 100px;
+    height: 100px;
+}
+.relative-picture {
+    position: relative;
+}
+.absolute-text {
+    position: absolute;
+    font-size: 1.5em;
+    color: rgba(112, 112, 112, 0.8);
+    left: -10px;
+    bottom: 90px;
+}
+
+@keyframes bottom-to-top-grid {
+    from {
+        margin-top: 1500px;
+    }
+    to {
+        margin-top: 110px;
+    }
+}
+
+// 画面サイズごとに余白の変更
+@media (max-width: 1076px) {
+    body .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 934px) {
+    body .wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 814px) {
+    body .wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+}
+
+// スライドインの動作も変更
+@media (max-width: 596px) {
+    body .wrapper {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    body .wrapper .container {
+      margin: 80px 0 0 0;
+    }
+    body .wrapper .container ul {
+      animation: bottom-to-top-grid-m 1.3s ease-out 0s 1 normal;
+    }
+    body .wrapper .container ul li {
+      margin: 10px 10px 100px 10px;
+      height: 100px;
+      width: 100px;
+    }
+    @keyframes bottom-to-top-grid-m {
+      from {
+          margin-top: 1500px;
+      }
+      to {
+          margin-top: 80px;
+      }
+    }
 }
