@@ -14,20 +14,17 @@
 .wrapper .container ul li {
   margin: 30px;
 }
+.box {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
 .box img {
     width: 100px;
     height: 100px;
 }
-.relative-picture {
-    position: relative;
-}
-.absolute-text {
-    position: absolute;
-    font-size: 1.5em;
-    color: rgba(112, 112, 112, 0.8);
-    left: -10px;
-    bottom: 90px;
-}
+
 
 @keyframes bottom-to-top-grid {
     from {
@@ -85,4 +82,42 @@
           margin-top: 80px;
       }
     }
+}
+
+// 削除フォーム
+.absolute-text {
+    position: absolute;
+    font-size: 1.7em;
+    color: rgba(112, 112, 112, 0.8);
+    right: -33px;
+    bottom: 39px;
+}
+.absolute-text:active {
+    font-size: 1.6em;
+    right: -32px;
+}
+
+// 投稿フォーム
+.post-form-wrapper {
+  width: 100%;
+}
+
+.file-post-container {
+  width: 100%;
+}
+
+.btn-input {
+  width: 64px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.submit-line {
+  width: 55px;
+  height: 25px;
+  margin: 0 auto;
+}
+
+.thumb {
+  height: 100px;
 }

@@ -5,18 +5,15 @@ Rails.application.routes.draw do
   }
   
   resources :users, path: '/', only: [:show] do
-    resources :albums, only: [:index,  :edit, :new, :create]
-    resources :posts, only: [:show, :new, :create, :destroy]
+    resources :posts, except: [:index, :edit]
+    resources :albums, except: [:edit]
   end
-  resources :users, path: '/', only: [:show] do
-    resources :albums, path: '/', only: [:show, :destroy, :update] do
-      member do
-        get :horizontal
-        get :vartical
-        get :chess
-      end
-    end
-  end
+  get '/posts/edit', to: 'posts#edit'
+  get '/albums/edit', to: 'albums#edit'
+  get '/:user_id/:album_id/posts', to: 'posts#index' 
+  get '/:user_id/:album_id/posts/horizontal', to: 'posts#horizontal'
+  get '/:user_id/:album_id/posts/vartical', to: 'posts#vartical'
+  get '/:user_id/:album_id/posts/chess', to: 'posts#chess'
   
   root "home#top"
 end

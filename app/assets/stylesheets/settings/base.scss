@@ -7,6 +7,28 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.title-heading {
+  width: 100%;
+  height: 125px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.title {
+  font-family: 'Antic', sans-serif;
+  line-height: 110px;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+  text-align: center;
+  display: block;
+}
+
+>>>>>>> ab5fa28... add: アルバム削除フォーム作成。ルーティングの変更
 
 // ドロップダウンが画像に重ならないように横並びに
 @media (max-width: 1020px) {

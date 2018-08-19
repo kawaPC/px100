@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
-<div class="users-heading">
-    <h2 class="username"><%= link_to "#{@user.name}", user_albums_path %></h2>
+<div class="title-heading">
+    <h2 class="title"><%= link_to "#{@user.name}", user_albums_path %></h2>
 </div>
 <div class="container">
     <%= render partial: 'album', collection: @albums , locals: {user: @user} %>
@@ -9,4 +9,9 @@
     <%= link_to new_user_album_path do %>
       <div class="btn"><i class="fas fa-plus"></i></div>
     <% end %>
+<% end %>
+<% content_for :edit do %>
+  <%= link_to albums_edit_path(user_id: @user.friendly_id) do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
 <% end %>

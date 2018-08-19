@@ -1,16 +1,30 @@
-<%= link_to user_album_path(user, album) do %>
 <div class="text-box">
     <div class="text">
-        <%= album.album_name %>
+        <%= link_to("/#{params[:user_id]}/#{album.album_name}/posts") do %>
+            <%= album.album_name %>
+        <% end %>
     </div>
 </div>
 <div class="cover-box">
-        <div class="cover">
+    <div class="cover">
+        <%= link_to("/#{params[:user_id]}/#{album.album_name}/posts") do %>
             <% if album.cover_picture.url %>
                 <%= image_tag album.cover_picture.url %>
             <% else %>
                 <%= image_tag "default_picture.jpg" %>
             <% end %>
-        </div>
+        <% end %>
+    </div>
+    <% if controller.action_name == 'edit' %>
+      <div class="delete-album">
+        <%= link_to "/#{current_user.friendly_id}/albums/#{album.id}",
+        method: :delete, data: { confirm: "削除しますか？" } do %>
+          <i class="fas fa-times-circle"></i>
+        <% end %>
+      </div>
+    <% end %>
 </div>
-<% end %>
+
+  
+  
+

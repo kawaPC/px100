@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
     before_action :load_album, only: [:show, :edit]
-    before_action :correct_user, only: [:new]
+    before_action :correct_user, only: [:new, :edit]
     
     def index
         @user = User.find_by(friendly_id: params[:user_id])
@@ -46,8 +46,14 @@ class AlbumsController < ApplicationController
     end
     
     def edit
-        @posts = Post.where(album_id: @album.id)
-        @user = User.find_by(id: @album.user_id)
+        @user = User.find_by(friendly_id: params[:user_id])
+        @albums = Album.where(user_id: @user.id)
+    end
+    
+    def destroy
+      Album.find(params[:id]).destroy
+      flash[:notice] = "削除しました"
+      redirect_back(fallback_location: user_albums_path)
     end
     
     def update

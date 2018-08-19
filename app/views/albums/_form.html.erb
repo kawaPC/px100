@@ -1,9 +1,0 @@
- <div class="box">
-  <figure class="relative-picture">
-    <%= image_tag post.picture.url %>
-    <%= link_to "/#{current_user.friendly_id}/posts/#{post.id}",
-    method: :delete, data: { confirm: "削除しますか？" } do %>
-      <figcaption class="absolute-text"><i class="far fa-times-circle"></i></figcaption>
-    <% end %>
-  </figure>
-</div>

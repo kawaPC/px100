@@ -19,12 +19,12 @@
             <% end %>
           </div>
           <div class="child child-secound">
-            <%= yield :edit %>
-          </div>
-          <div class="child child-third">
             <%= link_to destroy_user_session_path do %>
               <i class="fas fa-sign-out-alt"></i>
             <% end %>
+          </div>
+          <div class="child child-third">
+            <%= yield :edit %>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@
     </div>
 </div>
 <% content_for :return do %>
-    <%= link_to ("#") do %>
+    <%= link_to :back do %>
         <div class="btn"><i class="fas fa-reply"></i></div>
     <% end %>
 <% end %>
@@ -16,7 +16,7 @@
     <% end %>
 <% end %>
 <% content_for :edit do %>
-  <%= link_to edit_user_album_path do %>
+  <%= link_to posts_edit_path do %>
     <i class="far fa-trash-alt"></i>
   <% end %>
 <% end %>
