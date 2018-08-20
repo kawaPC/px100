@@ -14,7 +14,7 @@ class Album < ApplicationRecord
   length: { minimum: 3, maximum: 25 },
   ban_reserved: true
   
-  
+
   def to_param
     album_name
   end

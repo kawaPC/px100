@@ -1,3 +1,5 @@
+User.create(name: 'sample', email: 'sample100px@example.com', password: 'sample100114514', friendly_id: 'sample')
+User.create(name: 'pochi', email: 'kawamoto.hp0@gmail.com', password: 'password', friendly_id: 'kawamoto')
 User.create(name: 'kawamoto', email: 'kawamoto1@example.com', password: 'password', friendly_id: 'kawamoto')
 User.create(name: 'kawa2', email: 'kawamoto2@example.com', password: 'password' , friendly_id: 'kawamoto2')
 User.create(name: 'kawa3', email: 'kawamoto3@example.com', password: 'password', friendly_id: 'kawamoto3')

@@ -1,9 +1,13 @@
 class AlbumsController < ApplicationController
     before_action :load_album, only: [:show, :edit]
-    before_action :correct_user, only: [:new, :edit]
+    before_action :correct_user, only: [:new, :edit, :delete, :create, :destroy, :update]
     
     def index
         @user = User.find_by(friendly_id: params[:user_id])
+        session[:album_user] = @user.id
+        if @user == current_user && Album.find_by(user_id: @user.id) == nil
+          redirect_to new_user_album_path
+        end
         @albums = Album.where(user_id: @user.id)
         session[:album] = nil
     end
@@ -41,22 +45,42 @@ class AlbumsController < ApplicationController
             redirect_to user_albums_path
         else
             flash[:notice] = "保存できませんでした"
-            render 'albums/new'
+            redirect_to user_albums_path
         end
     end
     
-    def edit
-        @user = User.find_by(friendly_id: params[:user_id])
+    def select
+        @user = User.find_by(id: session[:album_user])
+        redirect_to user_albums_path(@user) unless Album.find_by(user_id: @user.id)
+        @albums = Album.where(user_id: @user.id)
+    end
+    
+    def delete
+        @user = User.find_by(id: session[:album_user])
+        redirect_to user_albums_path(@user) unless Album.find_by(user_id: @user.id)
         @albums = Album.where(user_id: @user.id)
     end
     
     def destroy
-      Album.find(params[:id]).destroy
-      flash[:notice] = "削除しました"
-      redirect_back(fallback_location: user_albums_path)
+        Album.find(params[:id]).destroy
+        flash[:notice] = "削除しました"
+        redirect_back(fallback_location: user_albums_path)
+    end
+    
+    def edit
+        @user = User.find_by(id: session[:album_user])
+        @album = Album.find_by(album_name: params[:album])
     end
     
     def update
+      @album = Album.find_by(album_name: params[:id])
+      if @album.update(album_params)
+        flash[:notice] = "アルバムを変更しました"
+        redirect_to user_albums_path(current_user)
+      else
+        flash[:notice] = "アルバムを変更できませんでした"
+        render 'edit'
+      end
     end
     
     private
@@ -71,7 +95,7 @@ class AlbumsController < ApplicationController
     
     def correct_user
         @user = User.find_by(friendly_id: params[:user_id])
-        unless @user == current_user
+        unless session[:album_user] == current_user.id
             flash[:notice] = "権限がありません"
             redirect_back(fallback_location: root_path)
         end

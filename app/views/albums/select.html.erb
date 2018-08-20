@@ -1,0 +1,11 @@
+<div class="title-heading">
+    <h2 class="title"><%= link_to "#{@user.name}", user_albums_path(@user) %></h2>
+</div>
+<div class="container">
+    <%= render partial: 'album', collection: @albums , locals: {user: @user} %>
+</div>
+<% content_for :return do %>
+  <%= link_to :back do %>
+    <div class="btn"><i class="fas fa-reply"></i></div>
+  <% end %>
+<% end %>

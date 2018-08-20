@@ -6,28 +6,36 @@
   </div>
   <div class="nav-center"><%= link_to("100px", root_path) %></div>
   <div class="nav-right">
-    <%= yield :return %>
-    <%= yield :plus %>
-    <div class="nav">
-      <div class="btn">
-        <input type="checkbox" id="label1" />
-        <label for="label1"></label>
-        <div class="hidden_show">
-          <div class="child child-firts">
-            <%= link_to("#") do %>
-              <i class="fas fa-user"></i></a>
-            <% end %>
-          </div>
-          <div class="child child-secound">
-            <%= link_to destroy_user_session_path do %>
-              <i class="fas fa-sign-out-alt"></i>
-            <% end %>
-          </div>
-          <div class="child child-third">
+    <% if user_signed_in? && current_user.friendly_id == params[:user_id] %>
+      <%= yield :plus %>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="nav">
+        <div class="btn">
+          <input type="checkbox" id="label1" />
+          <label for="label1"></label>
+          <div class="hidden_show">
+            <div class="child child-firts">
+              <%= link_to edit_user_registration_path do %>
+                <i class="fas fa-user"></i></a>
+              <% end %>
+            </div>
+            <div class="child child-secound">
+              <%= link_to destroy_user_session_path do %>
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+            </div>
             <%= yield :edit %>
+            <%= yield :delete %>
           </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <div class="btn">
+        <%= link_to new_user_session_path do %>
+          <i class="fas fa-sign-in-alt"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

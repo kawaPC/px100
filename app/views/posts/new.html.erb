@@ -1,5 +1,8 @@
 <div class="title-heading">
-    <h2 class="title"><%= link_to "#{@album.album_name}", :back %></h2>
+  <h2 class="title"><%= link_to "#{@album.album_name}", :back %></h2>
+  <% if nil_post? %>
+    <p>画像を投稿してみましょう</p>
+  <% end %>
 </div>
 <div class="post-form-wrapper">
   <%= form_for(@post, url: user_posts_path) do |f| %>

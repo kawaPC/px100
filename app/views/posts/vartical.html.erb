@@ -1,24 +1,26 @@
 <div class="vartical-wrapper">
-    <div class="vartical-container" class="transitions-enable clearfix">
-      <ul>
-        <%= render partial: "post", collection: @posts %>
-      </ul>
-    </div>
+  <div class="vartical-container" class="transitions-enable clearfix">
+    <ul>
+      <%= render partial: "post", collection: @posts %>
+    </ul>
+  </div>
 </div>
 <% content_for :return do %>
-    <%= link_to :back do %>
-        <div class="btn"><i class="fas fa-reply"></i></div>
-    <% end %>
+  <%= link_to :back do %>
+      <div class="btn"><i class="fas fa-reply"></i></div>
+  <% end %>
 <% end %>
 <% content_for :plus do %>
-    <%= link_to new_user_post_path do %>
-      <div class="btn"><i class="fas fa-plus"></i></div>
-    <% end %>
-<% end %>
-<% content_for :edit do %>
-  <%= link_to posts_edit_path do %>
-    <i class="far fa-trash-alt"></i>
+  <%= link_to new_user_post_path do %>
+    <div class="btn"><i class="fas fa-plus"></i></div>
   <% end %>
+<% end %>
+<% content_for :delete do %>
+  <div class="child child-fourth">
+    <%= link_to posts_edit_path do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </div>
 <% end %>
 <% content_for :left_button do %>
   <%= render partial: "left_button" %>

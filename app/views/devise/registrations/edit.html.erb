@@ -1,55 +1,48 @@
-<div class="main user-edit">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= devise_error_messages! %>
-  
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autocomplete: "name" %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :friendly_id %><br />
-      <%= f.text_field :friendly_id, autocomplete: "friendly_id" %>
-    </div>
-  
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-  
-    <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+<div class="welcom-title-container">
+  <div class="title">
+    <h2>プロフィールの変更</h2>
+  </div>
+</div>
+
+<div class="welcome-wrapper">
+  <div class="signin-box">
+    <ul class="welocme-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <li>
+          <p><%= f.label :email %></p>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </li>
+        <li>
+          <p><%= f.label :name %></p>
+          <%= f.text_field :name, autocomplete: "name" %>
+        </li>
+        <li>
+          <p><%= f.label :friendly_id, "URL" %></p>
+          <i>http://px100. </i><%= f.text_field :friendly_id, autocomplete: "friendly_id" %><i> .herokuapp.com</i>
+        </li>
+        <% unless current_user.provider %>
+          <li>
+            <p><%= f.label :password %></p>
+            <p>(passwordを変更する場合は入力してください)</p>
+            <%= f.password_field :password, autocomplete: "off" %>
+            <!--<% if @minimum_password_length %>-->
+            <!--  <p><%= @minimum_password_length %>字以上</p>-->
+            <!--<% end %>-->
+          </li>
+          <li>
+            <p><%= f.label :password_confirmation %></p>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </li>
+        <% end %>
+        <li>
+          <%= f.submit "Update" %>
+        </li>
       <% end %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
-  
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
-  <% end %>
-  
-  <h3>Cancel my account</h3>
-  
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-  
-  <%= link_to "Back", :back %>
+      <li id="delete-acount">
+        <p>アカウントの消去</p>
+        <p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </li>
+    </ul>
+  </div>
 </div>

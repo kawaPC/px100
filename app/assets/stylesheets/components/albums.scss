@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
@@ -44,7 +45,27 @@
         margin-top: 110px;
     }
 =======
+=======
+.title-heading p {
+  font-family: 'Antic', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  color: #707070;
+  text-align: center;
+  display: block;
+}
+
+>>>>>>> 8b0f0e6... add: TOPページ/sign-in sign-up フォーム/ユーザー編集フォーム/アルバム変更フォーム
 .container {
+  width: 100%;
+  float: left;
+}
+
+.edit-form-container {
+  width: 100%;
+  height: 80px;
+  display:inline-block;
 }
 
 .text-box {
@@ -87,9 +108,7 @@
   font-size: 1em;
 }
 
-.cover label {
-  position: relative;
-}
+
 
 .text {
   font-family: 'Antic', sans-serif;
@@ -109,7 +128,7 @@
   line-height: 65px;
 }
 
-input[type="text"] {
+.text-form input[type="text"] {
   font-family: 'Antic', sans-serif;
   color: #707070;
   font-size: 20px;
@@ -119,7 +138,7 @@ input[type="text"] {
   border: solid 1px;
   border-radius: 2px;
 }
-input[type="text"]:focus {
+.text-form input[type="text"]:focus {
   outline: solid 2px white;
 }
 
@@ -127,6 +146,7 @@ input[type="text"]:focus {
   width: 100%;
   height: 65px;
   margin-bottom: 60px;
+  display: block;
 }
 
 
@@ -156,10 +176,31 @@ input[type="text"]:focus {
   line-height: 64px;
 }
 
+.edit-label-picture {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.edit-label-picture i {
+  font-size: 2em;
+  color: rgba(255,255,255,0.9);
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.cover label {
+  position: relative;
+}
+
 .put {
   position: absolute;
   top: 0px;
   left: 0px;
+  z-index: 99;
 }
 
 .submit {
@@ -172,8 +213,7 @@ input[type="submit"] {
   font-family: 'Antic', sans-serif;
   color: #707070;
   letter-spacing: 0.08em;
-  width: 55px;
-  height: 25px;
+  padding: 3px 5px;
   border: solid 1px gray;
   border-radius: 4px;
   background-color: white;

@@ -3,7 +3,6 @@
     display: flex;
     width:100%;
     height: 40px;
-    background-color: rgb(229, 229, 229);
     border-bottom: solid 1px rgb(199, 199, 199);
     position: fixed;
     top: 0px;
@@ -32,10 +31,10 @@
 /////////// ナビゲーションバー中央 ///////////
 .nav-center {
     height: 40px;
-    line-height: 1.8;
+    line-height: 1.7;
     flex: 1;
-    font-family: 'Antic', sans-serif;
-    font-size: 1.3em;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.5em;
     letter-spacing: 0.2em;
     color: rgb(112, 112, 112);
     text-align: center;
@@ -44,7 +43,7 @@
 
 /////////// ナビゲーションバー右側 ///////////
 .nav-right {
-    width: 150px;
+    width: 170px;
     height: 40px;
     display: flex;
     justify-content: flex-end;

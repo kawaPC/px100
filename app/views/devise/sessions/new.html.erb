@@ -1,28 +1,89 @@
-<div class="main login">
-  <h2>Log in</h2>
+<div class="welcom-title-container">
+  <div class="title">
+    <h2>ログイン / 登録</h2>
+  </div>
+</div>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-  
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+<div class="welcome-wrapper">
+  <div class="signin-box">
+      <div class="nav-box">
+        <h3>ログイン</h3>
       </div>
-    <% end -%>
-  
-    <div class="actions">
-      <%= f.submit "Log in" %>
+    <ul class="welocme-form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <li>
+          <div class="field">
+            <p><%= f.label :email %></p>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <p><%= f.label :password %></p>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+        </li>
+        <li>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <p>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, "ログインを維持する" %>
+              </p>
+            </div>
+          <% end -%>
+        </li>
+        <li>
+          <div class="actions">
+            <%= f.submit "Log in" %>
+          </div>
+        </li>
+      <% end %>
+      <%= link_to user_twitter_omniauth_authorize_path do %>
+        <i class="fab fa-twitter-square"></i>
+      <% end %>
+    </ul>
+  </div>
+  <div class="signup-box">
+    <div class="nav-box">
+      <h3>登録</h3>
     </div>
-  <% end %>
-  
-  <%= render "devise/shared/links" %>
+    <ul class="welocme-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <li>
+          <div class="field">
+            <p><%= f.label :email %></p>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        </li>
+        <li>
+          <div class="filed">
+            <p><%= f.label :name %></p>
+            <%= f.text_field :name, autocomplete: "off" %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <p><%= f.label :password %></p>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <p><%= f.label :password_confirmation %></p>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+        </li>
+        <li>
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

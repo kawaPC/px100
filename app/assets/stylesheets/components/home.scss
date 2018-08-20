@@ -1,6 +1,179 @@
-.home-top .container {
-    
+.top-nav-container {
+  display: flex;
+  width:100%;
+  height: 40px;
+  border-bottom: solid 1px rgb(199, 199, 199);
+  position: fixed;
+  top: 0px;
+  flex-direction: row-reverse;
 }
-.home-top .container ul li {
-    margin: 30px;
+
+.about-app {
+  height: 40px;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.about-app p {
+  font-size: 0.9em;
+  font-family: 'Antic', sans-serif;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+}
+
+.top-title-container {
+  padding: 120px 0 100px 0;
+  text-align: center;
+}
+
+.top-title h1 {
+  font-family: 'Poiret One', cursive;
+  font-size: 5em;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+  text-align: center;
+}
+
+#caption {
+  font-size: 0.9em;
+  font-family: 'Antic', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+  text-align: center;
+  margin: 20px;
+}
+
+@media (max-width: 800px) {
+  .top-title-container {
+    padding: 90px 0 30px 0;
+  }
+  .top-title h1 {
+    font-size: 4em;
+  }
+}
+
+
+.top-login-container {
+  width: 100%;
+  text-align: center;
+}
+
+.top-login-container ul {
+  margin-top: 30px;
+}
+
+.top-login-container ul li {
+  margin-bottom: 70px;
+}
+
+.top-login-container ul li p {
+  margin-top: 5px;
+}
+
+.top-login-container .fa-twitter-square {
+  font-size: 80px;
+  color: rgb(29, 161, 242);
+}
+
+.top-login-container .fa-twitter-square:active {
+  font-size: 75px;
+  padding-bottom: 5px;
+}
+
+.top-login-container .fa-envelope-square {
+  font-size: 80px;
+  color: rgb(219, 73, 60);
+}
+
+.top-login-container .fa-envelope-square:active {
+  font-size: 75px;
+  padding-bottom: 5px;
+}
+
+
+
+
+// ログイン・登録ページ
+.welcom-title-container {
+  padding: 35px 0 0 0;
+  text-align: center;
+}
+
+
+.welcome-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.nav-box {
+  margin-bottom: 30px;
+}
+.nav-box h3 {
+  text-align: center;
+  font-size: 1.1em;
+  font-family: 'Antic', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+}
+
+.signin-box {
+  display: inline-block;
+  padding: 20px;
+  border: solid 1px gray;
+  border-radius: 4px;
+  margin: 40px 20px;
+}
+
+.welocme-form .fa-twitter-square {
+  font-size: 45px;
+  color: rgb(29, 161, 242);
+  margin-top: 20px;
+}
+
+.welocme-form .fa-twitter-square:active {
+  font-size: 40px;
+  padding-bottom: 5px;
+}
+
+.signup-box {
+  display: inline-block;
+  padding: 20px;
+  border: solid 1px gray;
+  border-radius: 4px;
+  margin: 40px 20px;
+}
+
+.welocme-form {
+  margin-top: 10px;
+}
+
+.welocme-form li {
+  margin-bottom: 30px;
+}
+
+.welocme-form li p {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  font-family: 'Antic', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgb(112, 112, 112);
+}
+
+.welocme-form li i {
+  font-size: 0.9em;
+  font-family: 'Antic', sans-serif;
+  font-weight: 300;
+  color: rgb(112, 112, 112);
+}
+
+#delete-acount {
+  margin-top: 20px;
+  opacity: 0.8;
 }
