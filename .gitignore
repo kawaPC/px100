@@ -32,5 +32,3 @@ vendor/bundle/
 
 # アルバム用のサンプル画像を無視する
 /public/sample
-
-/db/seeds.rb
