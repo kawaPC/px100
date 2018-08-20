@@ -7,7 +7,7 @@
 <div class="welcome-wrapper">
   <div class="signin-box">
     <ul class="welocme-form">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
         <%= devise_error_messages! %>
         <li>
           <p><%= f.label :email %></p>
@@ -26,9 +26,11 @@
             <p><%= f.label :password %></p>
             <p>(passwordを変更する場合は入力してください)</p>
             <%= f.password_field :password, autocomplete: "off" %>
-            <!--<% if @minimum_password_length %>-->
-            <!--  <p><%= @minimum_password_length %>字以上</p>-->
-            <!--<% end %>-->
+            <!--
+            <% if @minimum_password_length %>-->
+              <!--  <p><%= @minimum_password_length %>字以上</p>-->
+              <!--
+            <% end %>-->
           </li>
           <li>
             <p><%= f.label :password_confirmation %></p>
@@ -41,7 +43,7 @@
       <% end %>
       <li id="delete-acount">
         <p>アカウントの消去</p>
-        <p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        <p><%= button_to "Delete my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete %></p>
       </li>
     </ul>
   </div>

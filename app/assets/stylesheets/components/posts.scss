@@ -2,97 +2,119 @@
   max-width: 1060px;
   margin: 0 auto;
 }
+
 .wrapper .container {
   margin: 100px 50px 0 50px;
   animation: bottom-to-top-grid 1.3s ease-out 0s 1 normal;
 }
+
 .wrapper .container ul {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .wrapper .container ul li {
   margin: 30px;
 }
+
 .box {
   width: 100px;
   height: 100px;
   position: relative;
   margin: 0 auto;
 }
+
 .box img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
-
 @keyframes bottom-to-top-grid {
-    from {
-        margin-top: 1500px;
-    }
-    to {
-        margin-top: 100px;
-    }
+  from {
+    margin-top: 1500px;
+  }
+  to {
+    margin-top: 100px;
+  }
 }
 
 // 画面サイズごとに余白の変更
 @media (max-width: 1076px) {
-    body .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+  body .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 934px) {
-    body .wrapper {
-      max-width: 740px;
-      margin: 0 auto;
-    }
+  body .wrapper {
+    max-width: 740px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 814px) {
-    body .wrapper {
-      max-width: 580px;
-      margin: 0 auto;
-    }
+  body .wrapper {
+    max-width: 580px;
+    margin: 0 auto;
+  }
 }
 
 // スライドインの動作も変更
 @media (max-width: 596px) {
-    body .wrapper {
-      max-width: 360px;
-      margin: 0 auto;
+  body .wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  body .wrapper .container {
+    margin: 80px 0 0 0;
+    animation: bottom-to-top-grid-m 1.3s ease-out 0s 1 normal;
+  }
+  body .wrapper .container ul li {
+    margin: 10px 10px 100px 10px;
+    height: 100px;
+    width: 100px;
+  }
+  @keyframes bottom-to-top-grid-m {
+    from {
+      margin-top: 1500px;
     }
-    body .wrapper .container {
-      margin: 80px 0 0 0;
-      animation: bottom-to-top-grid-m 1.3s ease-out 0s 1 normal;
+    to {
+      margin-top: 80px;
     }
-    body .wrapper .container ul li {
-      margin: 10px 10px 100px 10px;
-      height: 100px;
-      width: 100px;
-    }
-    @keyframes bottom-to-top-grid-m {
-      from {
-          margin-top: 1500px;
-      }
-      to {
-          margin-top: 80px;
-      }
-    }
+  }
+}
+
+@media (max-width: 374px) {
+  body .wrapper {
+    max-width: 318px;
+  }
+  body .wrapper .container ul li {
+    margin: 10px 3px 100px 3px;
+  }
 }
 
 // 削除フォーム
+
 .absolute-text {
-    position: absolute;
-    font-size: 1.7em;
-    color: rgba(112, 112, 112, 0.8);
-    right: -33px;
-    bottom: 39px;
+  position: absolute;
+  font-size: 1.7em;
+  color: rgba(112, 112, 112, 0.8);
+  right: -33px;
+  bottom: 39px;
 }
+
 .absolute-text:active {
-    font-size: 1.6em;
-    right: -32px;
+  font-size: 1.6em;
+  right: -32px;
+}
+
+@media (max-width: 596px) {
+  .absolute-text {
+    right: 34px;
+    top: 105px;
+  }
 }
 
 // 投稿フォーム

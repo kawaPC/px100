@@ -6,7 +6,7 @@
 </div>
 
 <div class="form-container">
-  <%= form_for(@album, url: { controller: :albums, action: :create } ) do |f| %>
+  <%= form_for(@album, url: {controller: :albums, action: :create}) do |f| %>
     <div class="text-box">
       <div class="text-form">
         <%= f.text_field :album_name, required: true, maxlength: 25, autocomplete: "off", placeholder: "Title" %>
@@ -32,50 +32,50 @@
 </div>
 
 <div class="container">
-  <%= render partial: 'album', collection: @albums , locals: {user: @user} %>
+  <%= render partial: 'album', collection: @albums, locals: {user: @user} %>
 </div>
 <% content_for :plus do %>
-    <%= link_to new_user_album_path do %>
-      <div class="btn"><i class="fas fa-plus"></i></div>
-    <% end %>
+  <%= link_to new_user_album_path do %>
+    <div class="btn"><i class="fas fa-plus"></i></div>
+  <% end %>
 <% end %>
 
 <script>
-  $('.picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 3) {
-      alert('3MB以上の画像は投稿できません');
+    $('.picture').bind('change', function () {
+        var size_in_megabytes = this.files[0].size / 1024 / 1024;
+        if (size_in_megabytes > 3) {
+            alert('3MB以上の画像は投稿できません');
+        }
+    });
+
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+
+            // Only process image files.
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            // Closure to capture the file information.
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    // Render thumbnail.
+                    var span = document.createElement('span');
+                    span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                        '" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('list').insertBefore(span, null);
+                };
+            })(f);
+
+            // Read in the image file as a data URL.
+            reader.readAsDataURL(f);
+        }
     }
-  });
-  
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
 
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
-
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
-
-      var reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
-    }
-  }
-
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>

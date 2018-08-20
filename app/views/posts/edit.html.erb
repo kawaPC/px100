@@ -1,12 +1,12 @@
 <div class="wrapper">
-    <div class="container">
-        <ul>
-            <%= render partial: "post", collection: @posts, as: "post", locals: {user: @user} %>
-        </ul>
-    </div>
+  <div class="container">
+    <ul>
+      <%= render partial: "post", collection: @posts, as: "post", locals: {user: @user} %>
+    </ul>
+  </div>
 </div>
 <% content_for :return do %>
-    <%= link_to :back do %>
-        <div class="btn"><i class="fas fa-reply"></i></div>
-    <% end %>
+  <%= link_to :back do %>
+    <div class="btn"><i class="fas fa-reply"></i></div>
+  <% end %>
 <% end %>

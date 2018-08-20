@@ -1,5 +1,5 @@
 <div class="form-container">
-  <%= form_for(album_edit, url: { controller: :albums, action: :update } ) do |f| %>
+  <%= form_for(album_edit, url: {controller: :albums, action: :update}) do |f| %>
     <div class="text-box">
       <div class="text-form">
         <%= f.text_field :album_name, required: true, maxlength: 25, autocomplete: "off", placeholder: "Title" %>

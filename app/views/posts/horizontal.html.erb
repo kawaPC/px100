@@ -1,11 +1,11 @@
 <ul class="scroll_lst">
- <div class="list-wrap">
-   <%= render partial: "horizontal_post", collection: @posts, as: "post" %>
- </div>
+  <div class="list-wrap">
+    <%= render partial: "horizontal_post", collection: @posts, as: "post" %>
+  </div>
 </ul>
 <% content_for :return do %>
   <%= link_to :back do %>
-      <div class="btn"><i class="fas fa-reply"></i></div>
+    <div class="btn"><i class="fas fa-reply"></i></div>
   <% end %>
 <% end %>
 <% content_for :plus do %>

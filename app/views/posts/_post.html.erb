@@ -3,7 +3,7 @@
     <%= image_tag post.picture.url %>
     <% if controller.action_name == 'edit' %>
       <%= link_to "/#{current_user.friendly_id}/posts/#{post.id}",
-      method: :delete, data: { confirm: "削除しますか？" } do %>
+                  method: :delete, data: {confirm: "削除しますか？"} do %>
         <figcaption class="absolute-text"><i class="fas fa-times-circle"></i></figcaption>
       <% end %>
     <% end %>

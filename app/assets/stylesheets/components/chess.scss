@@ -1,27 +1,100 @@
 .chess-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
+
 .chess-wrapper .chess-container {
-  margin: 110px 50px 0 50px;
+  margin: 110px 100px 0 100px;
 }
+
 .chess-wrapper .chess-container ul {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
   animation: bottom-to-top-chess 1.3s ease-out 0s 1 normal;
 }
+
 .chess-wrapper .chess-container ul li {
   height: 100px;
   width: 100px;
-  
+
 }
 
 @keyframes bottom-to-top-chess {
-    0% {
-        margin-top: 1500px;
-    }
-    100% {
-        margin-top: 110px;
-    }
+  from {
+    margin-top: 1500px;
+  }
+  to {
+    margin-top: 110px;
+  }
+}
+
+// 画面サイズごとに余白の変更
+@media (max-width: 1214px) {
+  body .chess-wrapper {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1114px) {
+  body .chess-wrapper {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1014px) {
+  body .chess-wrapper {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 914px) {
+  body .chess-wrapper {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 814px) {
+  body .chess-wrapper {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 714px) {
+  body .chess-wrapper {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 614px) {
+  body .chess-wrapper {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  body .chess-wrapper {
+    max-width: 500px;
+  }
+  body .chess-wrapper .chess-container {
+    margin: 90px 80px 0 80px;
+  }
+}
+
+@media (max-width: 516px) {
+  body .chess-wrapper {
+    max-width: 360px;
+  }
+  body .chess-wrapper .chess-container {
+    margin: 90px 30px 0 30px;
+  }
+}
+
+@media (max-width: 350px) {
+  body .chess-wrapper {
+    max-width: 350px;
+  }
+  body .chess-wrapper .chess-container {
+    margin: 90px 10px 0 10px;
+  }
 }

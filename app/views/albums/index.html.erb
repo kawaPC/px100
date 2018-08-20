@@ -5,7 +5,7 @@
   <% end %>
 </div>
 <div class="container">
-  <%= render partial: 'album', collection: @albums , locals: {user: @user} %>
+  <%= render partial: 'album', collection: @albums, locals: {user: @user} %>
 </div>
 <% content_for :plus do %>
   <%= link_to new_user_album_path do %>

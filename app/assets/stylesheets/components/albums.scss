@@ -1,51 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-.wrapper {
-  max-width: 1060px;
-  margin: 0 auto;
-}
-.wrapper .container {
-  margin: 100px 50px 0 50px;
-}
-.wrapper .container ul {
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: flex-start;
-  animation: bottom-to-top-grid 1.3s ease-out 0s 1 normal;
-}
-.wrapper .container ul li {
-  margin: 30px;
-}
-.box img {
-    width: 100px;
-    height: 100px;
-}
-.relative-picture {
-    position: relative;
-}
-.absolute-text {
-    position: absolute;
-    font-size: 1.5em;
-<<<<<<< HEAD
-    color: rgb(112, 112, 112);
-    left: -10px;
-    bottom: 49px;
-=======
-    color: rgba(112, 112, 112, 0.8);
-    left: -10px;
-    bottom: 90px;
->>>>>>> bc90ecc... update: 画像の表示サイズを100pxに。それにあわせてCSSの修正
-}
-
-@keyframes bottom-to-top-grid {
-    from {
-        margin-top: 1500px;
-    }
-    to {
-        margin-top: 110px;
-    }
-=======
-=======
 .title-heading p {
   font-family: 'Antic', sans-serif;
   font-weight: 300;
@@ -56,7 +8,6 @@
   display: block;
 }
 
->>>>>>> 8b0f0e6... add: TOPページ/sign-in sign-up フォーム/ユーザー編集フォーム/アルバム変更フォーム
 .container {
   width: 100%;
   float: left;
@@ -228,5 +179,4 @@ input[type="submit"]:active {
   box-shadow: none;
   border: solid 1px gray;
   outline: 0;
->>>>>>> ab5fa28... add: アルバム削除フォーム作成。ルーティングの変更
 }

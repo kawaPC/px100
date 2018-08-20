@@ -1,33 +1,33 @@
 <div class="text-box">
-    <div class="text">
-        <%= link_to("/#{user.friendly_id}/#{album.album_name}/posts") do %>
-            <%= album.album_name %>
-        <% end %>
-    </div>
+  <div class="text">
+    <%= link_to("/#{user.friendly_id}/#{album.album_name}/posts") do %>
+      <%= album.album_name %>
+    <% end %>
+  </div>
 </div>
 <div class="cover-box">
-    <div class="cover">
-        <%= link_to("/#{user.friendly_id}/#{album.album_name}/posts") do %>
-            <% if album.cover_picture.url %>
-                <%= image_tag album.cover_picture.url %>
-            <% else %>
-                <%= image_tag "default_picture.jpg" %>
-            <% end %>
-        <% end %>
+  <div class="cover">
+    <%= link_to("/#{user.friendly_id}/#{album.album_name}/posts") do %>
+      <% if album.cover_picture.url %>
+        <%= image_tag album.cover_picture.url %>
+      <% else %>
+        <%= image_tag "default_picture.jpg" %>
+      <% end %>
+    <% end %>
+  </div>
+  <% if controller.action_name == 'delete' %>
+    <div class="delete-album">
+      <%= link_to "/#{current_user.friendly_id}/albums/#{album.id}",
+                  method: :delete, data: {confirm: "削除しますか？"} do %>
+        <i class="fas fa-times-circle"></i>
+      <% end %>
     </div>
-    <% if controller.action_name == 'delete' %>
-      <div class="delete-album">
-        <%= link_to "/#{current_user.friendly_id}/albums/#{album.id}",
-        method: :delete, data: { confirm: "削除しますか？" } do %>
-          <i class="fas fa-times-circle"></i>
-        <% end %>
-      </div>
-    <% end %>
-    <% if controller.action_name == 'select' %>
-      <div class="delete-album">
-        <%= link_to edit_album_path(album, album: album.album_name) do %>
-          <i class="far fa-edit"></i>
-        <% end %>
-      </div>
-    <% end %>
+  <% end %>
+  <% if controller.action_name == 'select' %>
+    <div class="delete-album">
+      <%= link_to edit_album_path(album, album: album.album_name) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+  <% end %>
 </div>

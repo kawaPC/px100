@@ -2,9 +2,11 @@
   width: 100%;
   margin-top: 100px;
 }
+
 .vartical-wrapper .vartical-container {
   text-align: center;
 }
+
 .vartical-container ul {
   margin-top: 200px;
   animation: bottom-to-top 1.3s ease-out 0s 1 normal;
@@ -15,10 +17,10 @@
 }
 
 @keyframes bottom-to-top {
-    0% {
-        margin-top: 1300px;
-    }
-    100% {
-        margin-top: 200px;
-    }
+  0% {
+    margin-top: 1300px;
+  }
+  100% {
+    margin-top: 200px;
+  }
 }

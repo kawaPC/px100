@@ -1,45 +1,99 @@
-.horizontal_scroll_wrap{
-    margin-top:40px;
-    height: 90%;
-    overflow-y: hidden;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
+.horizontal_scroll_wrap {
+  margin-top: 40px;
+  height: 90%;
+  overflow-y: hidden;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
 }
+
 .scroll_lst {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    height: 100px;
-    position: absolute;
-    top: 40%;
-    -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll_item {
-    margin-right: 400px;
-    display: inline-block;
-    width: 100px;
+  margin-right: 400px;
+  display: inline-block;
+  width: 100px;
 }
 
-
 .scroll_item_inr {
-    display: block;
+  display: block;
 }
 
 .scroll_lst {
-    animation: right-to-left 1.3s ease-out 0s 1 normal;
-    margin-left: 200px;
+  animation: right-to-left 1.3s ease-out 0s 1 normal;
+  margin-left: 200px;
 }
 
 @keyframes right-to-left {
-    0% {
-        margin-left: 2500px;
+  0% {
+    margin-left: 2500px;
+  }
+  100% {
+    margin-left: 200px;
+  }
+}
+
+//画面サイズごとにアニメーションの終点を変更
+@media (max-width: 856px) {
+  .horizontal_scroll_wrap .scroll_item {
+    margin-right: 200px;
+  }
+  .horizontal_scroll_wrap .scroll_lst {
+    animation: right-to-left-ta 1.3s ease-out 0s 1 normal;
+    margin-left: 100px;
+  }
+
+  @keyframes right-to-left-ta {
+    from {
+      margin-left: 2500px;
     }
-    100% {
-        margin-left: 200px;
+    to {
+      margin-left: 100px;
     }
+  }
+}
+
+@media (max-width: 596px) {
+  .horizontal_scroll_wrap .scroll_lst {
+    animation: right-to-left-m 1.3s ease-out 0s 1 normal;
+    margin-left: 100px;
+  }
+  @keyframes right-to-left-m {
+    from {
+      margin-left: 2500px;
+    }
+    to {
+      margin-left: 100px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .horizontal_scroll_wrap .scroll_item {
+    margin-right: 150px;
+  }
+  .horizontal_scroll_wrap .scroll_lst {
+    animation: right-to-left-m 1.3s ease-out 0s 1 normal;
+    margin-left: 50px;
+  }
+
+  @keyframes right-to-left-m {
+    from {
+      margin-left: 2500px;
+    }
+    to {
+      margin-left: 50px;
+    }
+  }
 }
