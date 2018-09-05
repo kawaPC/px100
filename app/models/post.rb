@@ -1,12 +1,16 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :album
-  default_scope -> { order(created_at: :desc) }
-  mount_uploader :picture, PictureUploader
+
+  default_scope -> {order(created_at: :desc)}
+
   validates :user_id, presence: true
-  validate  :picture_size
-  
+  validate :picture_size
+
+  mount_uploader :picture, PictureUploader
+
   private
+
   # アップロードされた画像のサイズをバリデーションする
   def picture_size
     if picture.size > 3.megabytes

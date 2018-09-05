@@ -34,3 +34,5 @@ vendor/bundle/
 /public/sample
 
 /.env
+
+/node_modules
