@@ -10,40 +10,36 @@ class User < ApplicationRecord
             format: { with: /\A[A-Za-z][\w-]*\z/ },
             length: { minimum: 3, maximum: 25 },
             allow_nil: true,
-            ban_reserved: true
+            ban_reserved: true,
+            presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
 
   def self.from_omniauth(auth)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
-    unless user
-      user = User.create(name: auth.extra.raw_info.name,
-                         provider: auth.provider,
-                         uid: auth.uid,
-                         email: auth.info.email,
-                         token: auth.credentials.token,
-                         friendly_id: auth.set_random_name,
-                         password: Devise.friendly_token[0, 20])
+    User.find_or_create_by(uid: auth['uid']) do |user|
+      user.name = auth.extra.raw_info.name
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.token = auth.credentials.token
+      user.password = Devise.friendly_token[0, 20]
     end
-    return user
   end
 
+  # UserルートにはidではなくフレンドリーなURLを設定できるように
   def to_param
     friendly_id
   end
 
-  def set_random_name
-    friendly_id = SecureRandom.hex(10)
-    while User.where(friendly_id: friendly_id).exists?
-      friendly_id = SecureRandom.hex(10)
-    end
-    return friendly_id
-  end
-
+  # 登録時はユーザーページ用のURLをランダムに付与する
   def generate_friendly_id
-    self.friendly_id = self.set_random_name
+    random_id = SecureRandom.hex(10)
+    while User.exists?(friendly_id: random_id)
+      random_id = SecureRandom.hex(10)
+    end
+    self.friendly_id = random_id
   end
 
 
